@@ -1,0 +1,20 @@
+<head>
+        <link rel="stylesheet" href="todo_style.css">
+</head>
+<body>
+    {% block content %}
+        <div class="well">
+          <a href="/blogs/create">Add Blog</a>
+          {% for blog in blog_list %}
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <h3>{{blog.title}}</h3>
+                <a href="{% url 'blog_update' blog_id=blog.id %}" class="pull-left" class="blog_update">Edit</a> <br>
+                <a href="{% url 'blog_delete' blog_id=blog.id %}" class="pull-left" class="blog_delete">Delete</a>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+  
+  {% endblock content %}
+</body>  

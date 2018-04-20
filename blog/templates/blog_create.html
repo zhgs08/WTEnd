@@ -1,0 +1,19 @@
+{% block content %}
+      <div class="well">
+        <a href="/blogs/">Blog List</a>
+        <form action="{% url 'blog_create' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <input type="text" name="title" id="title" class="form-control" />
+                    <br>
+                    <label for="body">Body: </label>
+                    </br>
+                    <br />
+                    <textarea name="body" id="body" cols="80" rows="5"></textarea> <br>
+                </div>
+                <button type="submit" class="btn">Add</button>
+            </form>
+      </div>
+
+{% endblock content %}
